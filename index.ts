@@ -12,12 +12,8 @@ app.use(express.json({ limit: "50MB" }));
 app.use(express.urlencoded({ limit: "50MB" }));
 app.use(express.static(path.join(__dirname, "public")));
 
-setup cors
-app.use(
-cors({
-origin: "*",
-})
-);
+setup cors 
+app.use( cors({ origin: "*",}))
 
 const PORT = process.env.PORT ? process.env.PORT : 3001;
 
