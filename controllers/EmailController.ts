@@ -31,7 +31,7 @@ export const sendEmail = (
               {
                 email: toEmail,
                 name: author_name
-              }
+              },
         ],
         cc:[
             {
@@ -92,7 +92,33 @@ export const sendEmailToSelectedAuthor = (
     const dashedTitle = post_title.replace(/\s+/g, "-");
     // prepare msg
     const msg = {
-      to: author_email,
+      personalization: [
+        {
+        to: [
+              {
+                email: author_email,
+                name: author_name
+              },
+        ],
+        cc:[
+            {
+              email: 'nauman12002@gmail.com',
+              name: 'Nauman Sikandar'
+    
+            },
+          {
+              email: 'waqas@blairallenagency.com',
+              name: 'Waqas Shah'
+            },
+            {
+              email: 'mubashar.workmail@gmail.com',
+              name: 'Mubashar'
+    
+            }  
+        ],
+        }
+        ],
+      //to: author_email,
       from: {
         email: "waqasshahh13@gmail.com",
         name: "Affiliated Mortgage",
@@ -134,7 +160,33 @@ export const sendEmailForActivityApprovalToAuthor = (
     const dashedTitle = post_title.replace(/\s+/g, "-");
     // prepare msg
     const msg = {
-      to: author_email,
+      personalization: [
+        {
+        to: [
+              {
+                email: author_email,
+                name: 'Affiliated Author'
+              },
+        ],
+        cc:[
+            {
+              email: 'nauman12002@gmail.com',
+              name: 'Nauman Sikandar'
+    
+            },
+          {
+              email: 'waqas@blairallenagency.com',
+              name: 'Waqas Shah'
+            },
+            {
+              email: 'mubashar.workmail@gmail.com',
+              name: 'Mubashar'
+    
+            }  
+        ],
+        }
+        ],
+      //to: author_email,
       from: {
         email: "waqasshahh13@gmail.com",
         name: "Affiliated Mortgage",
