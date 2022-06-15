@@ -67,22 +67,23 @@ export const sendEmailToSelectedAuthor = (
     // prepare msg
     const msg = {
       to: author_email,
-      cc:[
-        {
-          email: 'nauman12002@gmail.com',
-          name: 'Nauman Sikandar'
+      cc: 'nauman12002@gmail.com',
+    //   cc:[
+    //     {
+    //       email: 'nauman12002@gmail.com',
+    //       name: 'Nauman Sikandar'
 
-        },
-      {
-          email: 'waqas@blairallenagency.com',
-          name: 'Waqas Shah'
-        },
-        {
-          email: 'mubashar.workmail@gmail.com',
-          name: 'Mubashar'
+    //     },
+    //   {
+    //       email: 'waqas@blairallenagency.com',
+    //       name: 'Waqas Shah'
+    //     },
+    //     {
+    //       email: 'mubashar.workmail@gmail.com',
+    //       name: 'Mubashar'
 
-        }  
-    ],
+    //     }  
+    // ],
       from: {
         email: "waqasshahh13@gmail.com",
         name: "Affiliated Mortgage",
@@ -125,22 +126,23 @@ export const sendEmailForActivityApprovalToAuthor = (
     // prepare msg
     const msg = {
       to: author_email,
-      cc:[
-        {
-          email: 'nauman12002@gmail.com',
-          name: 'Nauman Sikandar'
+      cc: 'nauman12002@gmail.com',
+    //   cc:[
+    //     {
+    //       email: 'nauman12002@gmail.com',
+    //       name: 'Nauman Sikandar'
 
-        },
-      {
-          email: 'waqas@blairallenagency.com',
-          name: 'Waqas Shah'
-        },
-        {
-          email: 'mubashar.workmail@gmail.com',
-          name: 'Mubashar'
+    //     },
+    //   {
+    //       email: 'waqas@blairallenagency.com',
+    //       name: 'Waqas Shah'
+    //     },
+    //     {
+    //       email: 'mubashar.workmail@gmail.com',
+    //       name: 'Mubashar'
 
-        }  
-    ],
+    //     }  
+    // ],
       from: {
         email: "waqasshahh13@gmail.com",
         name: "Affiliated Mortgage",
