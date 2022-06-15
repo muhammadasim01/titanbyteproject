@@ -25,33 +25,8 @@ export const sendEmail = (
     const dashedTitle = post_title.replace(/\s+/g, "-");
     // prepare msg
     const msg = {
-      personalization: [
-        {
-        to: [
-              {
-                email: toEmail,
-                name: author_name
-              }
-        ],
-        cc:[
-            {
-              email: 'nauman12002@gmail.com',
-              name: 'Nauman Sikandar'
-            },
-          {
-              email: 'waqas@blairallenagency.com',
-              name: 'Waqas Shah'
-            },
-    
-            {
-              email: 'mubashar.workmail@gmail.com',
-              name: 'Mubashar'
-            }  
-        ],
-        }
-        ],
-      //to: toEmail,
-      //cc:"nauman12002@gmail.com",
+      to: toEmail,
+      cc:"nauman12002@gmail.com",
       from: {
         email: "waqasshahh13@gmail.com",
         name: "Affiliated Mortgage",
