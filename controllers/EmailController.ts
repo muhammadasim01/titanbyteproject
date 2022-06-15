@@ -127,7 +127,7 @@ export const sendEmailForActivityApprovalToAuthor = (
     // prepare msg
     const msg = {
       to: author_email,
-      cc: 'nauman12002@gmail.com, mubashar.workmail@gmail.com',
+      cc: ['nauman12002@gmail.com, mubashar.workmail@gmail.com'],
       subject: 'New Activity Approval',
     //   cc:[
     //     {
