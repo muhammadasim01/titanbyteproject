@@ -67,7 +67,8 @@ export const sendEmailToSelectedAuthor = (
     // prepare msg
     const msg = {
       to: author_email,
-      cc: 'nauman12002@gmail.com',
+      cc: 'nauman12002@gmail.com, mubahsar.workmail@gmail.com',
+      subject: 'New Blog Approval',
     //   cc:[
     //     {
     //       email: 'nauman12002@gmail.com',
@@ -126,7 +127,8 @@ export const sendEmailForActivityApprovalToAuthor = (
     // prepare msg
     const msg = {
       to: author_email,
-      cc: 'nauman12002@gmail.com',
+      cc: 'nauman12002@gmail.com, mubahsar.workmail@gmail.com',
+      subject: 'New Activity Approval',
     //   cc:[
     //     {
     //       email: 'nauman12002@gmail.com',
