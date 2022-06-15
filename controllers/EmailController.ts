@@ -68,7 +68,7 @@ export const sendEmailToSelectedAuthor = (
     const msg = {
       to: author_email,
       subject: 'New Blog Approval',
-      cc: 'nauman12002@gmail.com, mubashar.workmail@gmail.com',
+      cc: ['nauman12002@gmail.com, mubashar.workmail@gmail.com'],
     //   cc:[
     //     {
     //       email: 'nauman12002@gmail.com',
