@@ -1,0 +1,46 @@
+{
+  "name": "titanbyteproject",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "tsc --project ./",
+    "start": "node ./dist/index.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@aws-sdk/client-s3": "^3.35.0",
+    "@aws-sdk/node-http-handler": "^3.35.0",
+    "@sendgrid/mail": "^7.4.5",
+    "@types/fs-extra": "^9.0.13",
+    "@types/pg": "^8.6.0",
+    "@types/shelljs": "^0.8.9",
+    "axios": "^0.21.0",
+    "bcrypt": "^5.0.1",
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
+    "dotenv": "^10.0.0",
+    "express": "^4.17.1",
+    "fs-extra": "^10.0.0",
+    "images": "^3.2.3",
+    "jimp": "^0.16.1",
+    "jsonwebtoken": "^8.5.1",
+    "pg": "^8.6.0",
+    "pg-format": "^1.0.4",
+    "tar": "^6.1.11"
+  },
+  "devDependencies": {
+    "@types/bcrypt": "^5.0.0",
+    "@types/express": "^4.17.12",
+    "@types/faker": "^5.5.6",
+    "@types/jsonwebtoken": "^8.5.2",
+    "@types/node": "^15.12.4",
+    "@types/pg-format": "^1.0.1",
+    "@types/sendgrid": "^4.3.0",
+    "faker": "^5.5.3",
+    "ts-node": "^10.2.1",
+    "typescript": "^4.3.4"
+  }
+}
