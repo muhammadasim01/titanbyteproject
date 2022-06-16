@@ -68,23 +68,7 @@ export const sendEmailToSelectedAuthor = (
     const msg = {
       to: author_email,
       subject: 'New Blog Approval',
-      cc: ['nauman12002@gmail.com', 'mubashar.workmail@gmail.com', 'waqas@blairallenagency.com'],
-    //   cc:[
-    //     {
-    //       email: 'nauman12002@gmail.com',
-    //       name: 'Nauman Sikandar'
-
-    //     },
-    //   {
-    //       email: 'waqas@blairallenagency.com',
-    //       name: 'Waqas Shah'
-    //     },
-    //     {
-    //       email: 'mubashar.workmail@gmail.com',
-    //       name: 'Mubashar'
-
-    //     }  
-    // ],
+      cc: ['jb@blairallenagency.com', 'mubashar.workmail@gmail.com', 'waqas@blairallenagency.com'],
       from: {
         email: "waqasshahh13@gmail.com",
         name: "Affiliated Mortgage",
@@ -127,23 +111,8 @@ export const sendEmailForActivityApprovalToAuthor = (
     // prepare msg
     const msg = {
       to: author_email,
-      cc: ['nauman12002@gmail.com', 'mubashar.workmail@gmail.com', 'waqas@blairallenagency.com'],
+      cc: ['jb@blairallenagency.com', 'mubashar.workmail@gmail.com', 'waqas@blairallenagency.com'],
       subject: 'New Activity Approval',
-    //   cc:[
-    //     {
-    //       email: 'nauman12002@gmail.com',
-    //       name: 'Nauman Sikandar'
-    //     },
-    //   {
-    //       email: 'waqas@blairallenagency.com',
-    //       name: 'Waqas Shah'
-    //     },
-    //     {
-    //       email: 'mubashar.workmail@gmail.com',
-    //       name: 'Mubashar'
-
-    //     }  
-    // ],
       from: {
         email: "waqasshahh13@gmail.com",
         name: "Affiliated Mortgage",
