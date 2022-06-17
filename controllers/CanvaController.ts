@@ -35,10 +35,10 @@ const publishDesign = async (
 
     // url for affiliated header
     const affiliatedHeader = jimp.read(
-      "https://affiliatedsdus.wpengine.com/wp-content/uploads/2022/01/header.png"
+      "https://affiliatedsd.com/wp-content/uploads/2022/06/1200x50-H.jpg"
     );
     const affiliatedFooter = jimp.read(
-      "https://affiliatedsdus.wpengine.com/wp-content/uploads/2022/01/copyright.png"
+      "https://affiliatedsd.com/wp-content/uploads/2022/06/1200x50-F.jpg"
     );
     const image = await jimp.read(asset.url);
     // original image height
