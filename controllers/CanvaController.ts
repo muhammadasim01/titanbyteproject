@@ -49,7 +49,7 @@ const publishDesign = async (
     // (await affiliatedHeader).resize(1200, 100).quality(90);
     // (await affiliatedFooter).resize(1200, 100).quality(90);
     image.composite(await affiliatedHeader, 0, 0);
-    image.composite(await affiliatedFooter, 0, imageHeight - 40);
+    image.composite(await affiliatedFooter, 0, imageHeight - 50);
     // get image mime type for getting the buffer
     const imageMimeType = asset.type == "JPG" ? jimp.MIME_JPEG : jimp.MIME_PNG;
     // get the image buffer from the image read from the asset url
