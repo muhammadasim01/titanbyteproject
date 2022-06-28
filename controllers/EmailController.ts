@@ -40,7 +40,7 @@ export const sendEmail = (
         // approeLink: isBranch
         //   ? `https://${website_url}/wp-json/connectexpress/v1/postblog?title=${dashedTitle}`
         //   : `https://affiliatedsd.com/wp-json/connectexpress/v1/postblog?title=${dashedTitle}`,
-        approveLink: `https://affiliatedsd.com/wp-json/connectexpress/v1/postblog?title=${dashedTitle}`,
+        approveLink: `https://${website_url}/wp-json/connectexpress/v1/postblog?title=${dashedTitle}`,
       },
     };
     sgMail
