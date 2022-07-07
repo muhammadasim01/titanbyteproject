@@ -471,6 +471,7 @@ const sendEmailForActivityApproval = async (req: Request, res: Response) => {
 
 module.exports = {
   sendEmailFromDashBoard,
+  emailOnNewActivity,
   sendEmailOnBlogPostApproval,
   sendEmailForActivityApproval,
 };
