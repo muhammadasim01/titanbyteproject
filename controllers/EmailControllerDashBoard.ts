@@ -118,12 +118,13 @@ const emailOnNewActivity = async (req: Request, res: Response) => {
             message: "Something went wrong please try again later",
           });
         });
+    } else {
+      return res.json({
+        success: false,
+        message: "No Lo with the given url found on our records",
+      });
     }
-
-    return res.json({
-      success: false,
-      message: "No Lo with the given url found on our records",
-    });
+    
   }
   return res.json({
     success: false,
