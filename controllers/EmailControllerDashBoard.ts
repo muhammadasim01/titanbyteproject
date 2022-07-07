@@ -105,7 +105,7 @@ export const emailOnNewActivity = (
         .send(msg)
         .then(() => {
           console.log("Email sent");
-          return resolve.json({
+          return resolve({
             success: true,
             message: "Email sent",
           });
@@ -113,19 +113,19 @@ export const emailOnNewActivity = (
         .catch((err: any) => {
           console.log(err.errors);
           console.log(err);
-          return resolve.json({
+          return resolve({
             success: false,
             message: "Something went wrong please try again later",
           });
         });
     }
 
-    return resolve.json({
+    return resolve({
       success: false,
       message: "No Lo with the given url found on our records",
     });
   }
-  return resolve.json({
+  return resolve({
     success: false,
     message: "Invalid affiliate Type",
   });
