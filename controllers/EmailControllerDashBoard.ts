@@ -70,6 +70,8 @@ const emailOnNewActivity = async (req: Request, res: Response) => {
     affiliateType,
     websiteUrl,
     postID,
+    publishDate,
+    contentTitle,
     activityType,
     activityName,
     activityDesc,
