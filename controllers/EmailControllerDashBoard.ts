@@ -65,72 +65,7 @@ const sendEmailFromDashBoard = (req: Request, res: Response) => {
     });
 };
 
-const emailOnNewActivity = (
-  affiliateType : string,
-  websiteUrl : string,
-  postID : string,
-  activityType : string,
-  activityName : string,
-  activityDesc : string,
-  authorName : string,
-  imgSrc : string
-)=> {
-  return new Promise<any>((resolve, reject) => {
 
-  if (affiliateType === "LO") {
-    const loEmail = Lo.select(["lo_email"])
-      .where("website_url", "=", websiteUrl)
-      .get();
-    if (loEmail !== null) {
-      let templateId = SEND_GRID_POST_ACTIVITY_TO_SOCIAL_TEMPLATE_ID;
-
-      // prepare msg
-      const msg = {
-        to: 'waqas@blairallenagency.com',
-        from: {
-          email: "waqasshahh13@gmail.com",
-          name: "Affiliated Mortgage",
-        },
-        templateId,
-        dynamic_template_data: {
-          activityType,
-          activityName,
-          activityDesc,
-          authorEmail: authorName,
-          approveLink: `${websiteUrl}/wp-json/connectexpress/v1/shareonsocials?post_id=${postID}`,
-          imgSrc,
-        },
-      };
-      sgMail
-        .send(msg)
-        .then(() => {
-          console.log("Email sent");
-          return resolve({
-            success: true,
-            message: "Email sent",
-          });
-        })
-        .catch((err: any) => {
-          console.log(err.errors);
-          console.log(err);
-          return resolve({
-            success: false,
-            message: "Something went wrong please try again later",
-          });
-        });
-    }
-
-    return resolve({
-      success: false,
-      message: "No Lo with the given url found on our records",
-    });
-  }
-  return resolve({
-    success: false,
-    message: "Invalid affiliate Type",
-  });
-});
-};
 
 const sendEmailOnBlogPostApproval = async (req: Request, res: Response) => {
   const { post_title_query, author_name } = req.body;
@@ -471,7 +406,6 @@ const sendEmailForActivityApproval = async (req: Request, res: Response) => {
 
 module.exports = {
   sendEmailFromDashBoard,
-  emailOnNewActivity,
   sendEmailOnBlogPostApproval,
   sendEmailForActivityApproval,
 };
