@@ -65,28 +65,28 @@ const sendEmailFromDashBoard = (req: Request, res: Response) => {
     });
 };
 
-const emailOnNewActivity = (
-  affiliateType : string,
-  websiteUrl : string,
-  postID : string,
-  activityType : string,
-  activityName : string,
-  activityDesc : string,
-  authorName : string,
-  imgSrc : string
-) => {
-  return new Promise<any>((resolve, reject) => {
+const emailOnNewActivity = async (req: Request, res: Response) => {
+  const {
+    affiliateType,
+    websiteUrl,
+    postID,
+    activityType,
+    activityName,
+    activityDesc,
+    authorName,
+    imgSrc,
+  } = req.body;
 
   if (affiliateType === "LO") {
-    const loEmail = Lo.select(["lo_email"])
+    const loEmail = await Lo.select(["lo_email"])
       .where("website_url", "=", websiteUrl)
       .get();
-    if (loEmail !== null) {
+    if (loEmail.length !== 0) {
       let templateId = SEND_GRID_POST_ACTIVITY_TO_SOCIAL_TEMPLATE_ID;
 
       // prepare msg
       const msg = {
-        to: 'waqas@blairallenagency.com',
+        to: 'waqas@blairallenagency.com', //loEmail[0].lo_email,
         from: {
           email: "waqasshahh13@gmail.com",
           name: "Affiliated Mortgage",
@@ -105,7 +105,7 @@ const emailOnNewActivity = (
         .send(msg)
         .then(() => {
           console.log("Email sent");
-          return resolve({
+          return res.json({
             success: true,
             message: "Email sent",
           });
@@ -113,23 +113,22 @@ const emailOnNewActivity = (
         .catch((err: any) => {
           console.log(err.errors);
           console.log(err);
-          return resolve({
+          return res.json({
             success: false,
             message: "Something went wrong please try again later",
           });
         });
     }
 
-    return resolve({
+    return res.json({
       success: false,
       message: "No Lo with the given url found on our records",
     });
   }
-  return resolve({
+  return res.json({
     success: false,
     message: "Invalid affiliate Type",
   });
-});
 };
 
 const sendEmailOnBlogPostApproval = async (req: Request, res: Response) => {
