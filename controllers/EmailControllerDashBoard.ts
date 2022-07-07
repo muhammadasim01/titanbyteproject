@@ -65,7 +65,7 @@ const sendEmailFromDashBoard = (req: Request, res: Response) => {
     });
 };
 
-export const emailOnNewActivity = (
+const emailOnNewActivity = (
   affiliateType : string,
   websiteUrl : string,
   postID : string,
