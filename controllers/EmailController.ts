@@ -1,10 +1,12 @@
 import { Request, Response } from "express";
+import { Lo } from "../models/Lo";
 
 import {
   SEND_GRID_ACTIVITY_APPROVAL_TEMPLATE_ID,
   SEND_GRID_AFFILIATED_BLOG_DYNAMIC_TEMPLATE_ID,
   SEND_GRID_APPROVED_BLOG_POST_TEMPLATE_ID,
   SEND_GRID_EPOCH_BLOG_DYNAMIC_TEMPLATE_ID,
+  SEND_GRID_POST_ACTIVITY_TO_SOCIAL_TEMPLATE_ID,
 } from "../utils/constants";
 
 const sgMail = require("@sendgrid/mail");
