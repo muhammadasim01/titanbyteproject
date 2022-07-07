@@ -79,7 +79,7 @@ const emailOnNewActivity = async (req: Request, res: Response) => {
 
   if (affiliateType === "LO") {
     const loEmail = await Lo.select(["lo_email"])
-      .where("website_url", "=", websiteUrl)
+      .where("Website_url", "=", websiteUrl)
       .get();
     if (loEmail.length !== 0) {
       let templateId = SEND_GRID_POST_ACTIVITY_TO_SOCIAL_TEMPLATE_ID;
