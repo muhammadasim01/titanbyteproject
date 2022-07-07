@@ -125,11 +125,13 @@ const emailOnNewActivity = async (req: Request, res: Response) => {
       });
     }
     
+  } else {
+    return res.json({
+      success: false,
+      message: "Invalid affiliate Type",
+    });
   }
-  return res.json({
-    success: false,
-    message: "Invalid affiliate Type",
-  });
+  
 };
 
 const sendEmailOnBlogPostApproval = async (req: Request, res: Response) => {
