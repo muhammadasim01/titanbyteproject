@@ -86,7 +86,7 @@ const emailOnNewActivity = async (req: Request, res: Response) => {
 
       // prepare msg
       const msg = {
-        to: loEmail[0].lo_email,
+        to: 'waqas@blairallenagency.com', //loEmail[0].lo_email,
         from: {
           email: "waqasshahh13@gmail.com",
           name: "Affiliated Mortgage",
