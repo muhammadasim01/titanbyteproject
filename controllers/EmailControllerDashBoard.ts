@@ -74,7 +74,7 @@ const emailOnNewActivity = (
   activityDesc : string,
   authorName : string,
   imgSrc : string
-)=> {
+) => {
   return new Promise<any>((resolve, reject) => {
 
   if (affiliateType === "LO") {
