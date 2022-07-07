@@ -65,23 +65,23 @@ const sendEmailFromDashBoard = (req: Request, res: Response) => {
     });
 };
 
-const emailOnNewActivity = async (req: Request, res: Response) => {
-  const {
-    affiliateType,
-    websiteUrl,
-    postID,
-    activityType,
-    activityName,
-    activityDesc,
-    authorName,
-    imgSrc,
-  } = req.body;
+export const emailOnNewActivity = (
+  affiliateType : string,
+  websiteUrl : string,
+  postID : string,
+  activityType : string,
+  activityName : string,
+  activityDesc : string,
+  authorName : string,
+  imgSrc : string
+)=> {
+  return new Promise<any>((resolve, reject) => {
 
   if (affiliateType === "LO") {
-    const loEmail = await Lo.select(["lo_email"])
+    const loEmail = Lo.select(["lo_email"])
       .where("website_url", "=", websiteUrl)
       .get();
-    if (loEmail.length !== 0) {
+    if (loEmail !== null) {
       let templateId = SEND_GRID_POST_ACTIVITY_TO_SOCIAL_TEMPLATE_ID;
 
       // prepare msg
@@ -105,7 +105,7 @@ const emailOnNewActivity = async (req: Request, res: Response) => {
         .send(msg)
         .then(() => {
           console.log("Email sent");
-          return res.json({
+          return resolve.json({
             success: true,
             message: "Email sent",
           });
@@ -113,22 +113,23 @@ const emailOnNewActivity = async (req: Request, res: Response) => {
         .catch((err: any) => {
           console.log(err.errors);
           console.log(err);
-          return res.json({
+          return resolve.json({
             success: false,
             message: "Something went wrong please try again later",
           });
         });
     }
 
-    return res.json({
+    return resolve.json({
       success: false,
       message: "No Lo with the given url found on our records",
     });
   }
-  return res.json({
+  return resolve.json({
     success: false,
     message: "Invalid affiliate Type",
   });
+});
 };
 
 const sendEmailOnBlogPostApproval = async (req: Request, res: Response) => {
