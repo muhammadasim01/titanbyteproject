@@ -71,7 +71,6 @@ const emailOnNewActivity = async (req: Request, res: Response) => {
     websiteUrl,
     postID,
     publishDate,
-    contentTitle,
     activityType,
     activityName,
     activityDesc,
