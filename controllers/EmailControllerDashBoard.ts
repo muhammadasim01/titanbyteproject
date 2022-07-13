@@ -443,6 +443,7 @@ const sendEmailForActivityApproval = async (req: Request, res: Response) => {
       activityCover,
       activityType,
       publish_date,
+      authorName,
     } = req.body;
     console.log(req.body);
 
@@ -454,7 +455,8 @@ const sendEmailForActivityApproval = async (req: Request, res: Response) => {
       activityDesc,
       activityCover,
       activityType,
-      publish_date
+      publish_date,
+      authorName,
     )
       .then((result) => {
         console.log("Email sent to Author");
