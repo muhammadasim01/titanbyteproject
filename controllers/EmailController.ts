@@ -127,6 +127,7 @@ export const sendEmailForActivityApprovalToAuthor = (
         activityType: activity_type,
         activityDesc: activity_description,
         publishDate:publish_date,
+        authorName:authorName,
         approveLink: `https://affiliatedsd.com/wp-json/connectexpress/v1/approveActivity?post_id=${post_id}`,
         declinePostLink: `https://affiliatedsd.com/decline-comment/?declined-post-title=${dashedTitle}`,
       },
