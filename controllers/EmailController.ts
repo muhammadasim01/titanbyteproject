@@ -103,7 +103,8 @@ export const sendEmailForActivityApprovalToAuthor = (
   activity_description: string,
   activity_image: string,
   activity_type: string,
-  publish_date:string
+  publish_date:string,
+  authorName : string
 ) => {
   return new Promise<any>((resolve, reject) => {
     // replace spaces with dashes so its easier to pass as query param
