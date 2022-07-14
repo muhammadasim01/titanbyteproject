@@ -87,7 +87,7 @@ const emailOnNewActivity = async (req: Request, res: Response) => {
 
       // prepare msg
       const msg = {
-        to: 'waqas@blairallenagency.com', //loEmail[0].lo_email,
+        to: loEmail[0].lo_email,
         from: {
           email: "waqasshahh13@gmail.com",
           name: "Affiliated Mortgage",
@@ -99,7 +99,7 @@ const emailOnNewActivity = async (req: Request, res: Response) => {
           activityDesc,
           publishDate,
           authorName,
-          authorEmail: loEmail[0].lo_email, //authorName,
+          authorEmail: authorName,
           approveLink: `${websiteUrl}/wp-json/connectexpress/v1/shareonsocials?post_id=${postID}`,
           imgSrc,
         },
