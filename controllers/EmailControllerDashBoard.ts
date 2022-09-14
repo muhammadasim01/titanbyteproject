@@ -99,7 +99,7 @@ const emailOnNewActivity = async (req: Request, res: Response) => {
           activityDesc,
           publishDate,
           authorName,
-          authorEmail: authorName,
+          authorEmail: loEmail[0].lo_email,
           approveLink: `${websiteUrl}/wp-json/connectexpress/v1/shareonsocials?post_id=${postID}`,
           imgSrc,
         },
