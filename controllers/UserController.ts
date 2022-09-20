@@ -5,29 +5,24 @@ import { userObjectInterface } from "../types/dbObjectsTypes";
 const jwt = require("jsonwebtoken");
 require("dotenv").config();
 
-/**
- *
- * Utility functions
- * @returns jwtToken
- */
-// function for generating jwt token
-function generateToken(userId: number) {
-  return jwt.sign(userId, process.env.TOKEN_SECRET_KEY);
+function generateToken(email: string) {
+  return jwt.sign(email, process.env.TOKEN_SECRET_KEY);
 }
 
-/* Controller functions for handling the  functions that will handle the routes   */
 const registerUser = async (req: Request, res: Response) => {
   const { email, password } = req.body;
+ 
   const saltRounds = 10;
   bcrypt
     .hash(password, saltRounds)
     .then((data) => {
       User.insert(["email", "password"], [email, data])
         .then((result) => {
+          console.log(result);
           return res.send(result);
         })
         .catch((err) => {
-          console.log(err);
+           return res.send(err)
         });
     })
     .catch((err) => {
@@ -37,7 +32,7 @@ const registerUser = async (req: Request, res: Response) => {
 
 const loginUser = async (req: Request, res: Response) => {
   const { email, password } = req.body;
-  User.select(["user_id", "email", "password"])
+  User.select(["email", "password"])
     .where("email", "=", email)
     .get()
     .then((result: userObjectInterface[]) => {
@@ -58,7 +53,7 @@ const loginUser = async (req: Request, res: Response) => {
           }
           console.log(result[0]);
           
-          const token = generateToken(result[0].user_id);
+          const token = generateToken(result[0].email);
           return res.json({
             success: true,
             message: "Token generated for the user",

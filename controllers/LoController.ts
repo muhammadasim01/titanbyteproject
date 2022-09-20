@@ -40,7 +40,7 @@ const addNewLo = async (req: Request, res: Response) => {
               message: error.message,
             });
           });
-      } catch (error) {
+      } catch (error:any) {
         console.log(error);
         return res.json({
           success: false,
